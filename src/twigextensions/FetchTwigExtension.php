@@ -33,7 +33,7 @@ class FetchTwigExtension extends \Twig_Extension
       ];
   }
 
-  public function fetch($client, $method, $destination, $request = [])
+  public function fetch($client, $method, $destination, $request = [], $format = 'json')
   {
       $client = new \GuzzleHttp\Client($client);
 
@@ -41,10 +41,16 @@ class FetchTwigExtension extends \Twig_Extension
 
         $response = $client->request($method, $destination, $request);
 
+        if ($format == 'raw') {
+          $body = (string) $response->getBody();
+        } else {
+          $body = json_decode($response->getBody(), true);
+        }
+
         return [
           'statusCode' => $response->getStatusCode(),
           'reason' => $response->getReasonPhrase(),
-          'body' => json_decode($response->getBody(), true)
+          'body' => $body
         ];
 
       } catch (\Exception $e) {
