@@ -3,6 +3,7 @@
 # Fetch plugin for Craft CMS 3.x
 
 Utilise the Guzzle HTTP client from within your Craft templates.
+*(Forked from [Luke Youell](https://github.com/lukeyouell/craft-fetch))*
 
 ## Requirements
 
@@ -18,9 +19,9 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require lukeyouell/craft-fetch
+        composer require wyveo/craft-fetch
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Fetch.
+3. In the Control Panel, go to Settings → Plugins and click the "Install" button for Fetch.
 
 ## Using Fetch
 
@@ -34,6 +35,7 @@ This plugin is built to work with the standard [Guzzle request options](http://d
 | `method`  | `'POST'` |
 | `destination` | `'api/0.1/test'` |
 | `options` | `{ auth : ['username', 'password'] }` |
+| `format` | `'raw'` |
 
 ### Example Usage
 
@@ -80,6 +82,6 @@ This plugin is built to work with the standard [Guzzle request options](http://d
 
 ## Fetch Roadmap
 
-Some things to do, and ideas for potential features:
+More features soon:
 
-Brought to you by [Luke Youell](https://github.com/lukeyouell)
+Brought to you by [wyveo](https://github.com/wyveo)

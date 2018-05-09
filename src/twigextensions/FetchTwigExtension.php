@@ -4,20 +4,20 @@
  *
  * Utilise the Guzzle HTTP client from within your Craft templates.
  *
- * @link      https://github.com/lukeyouell
- * @copyright Copyright (c) 2018 Luke Youell
+ * @link      https://github.com/wyveo
+ * @copyright Copyright (c) 2018 wyveo
  */
 
-namespace lukeyouell\fetch\twigextensions;
+namespace wyveo\fetch\twigextensions;
 
-use lukeyouell\fetch\Fetch;
+use wyveo\fetch\Fetch;
 
 use Craft;
 
 /**
-* @author    Luke Youell
+* @author    Colin Wilson
 * @package   Fetch
-* @since     1.1.0
+* @since     1.0.0
 */
 class FetchTwigExtension extends \Twig_Extension
 {
