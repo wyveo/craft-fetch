@@ -1,6 +1,6 @@
 <?php
 /**
- * Fetch plugin for Craft CMS 3.x
+ * Guzzle plugin for Craft CMS 3.x
  *
  * Utilise the Guzzle HTTP client from within your Craft templates.
  *
@@ -8,18 +8,18 @@
  * @copyright Copyright (c) 2018 wyveo
  */
 
-namespace wyveo\fetch\variables;
+namespace wyveo\guzzle\variables;
 
-use wyveo\fetch\Fetch;
+use wyveo\guzzle\Guzzle;
 
 use Craft;
 
 /**
  * @author    Colin Wilson
- * @package   Fetch
+ * @package   Guzzle
  * @since     1.0.0
  */
-class FetchVariable
+class GuzzleVariable
 {
     // Public Methods
     // =========================================================================

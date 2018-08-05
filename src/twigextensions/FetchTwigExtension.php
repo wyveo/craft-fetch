@@ -1,6 +1,6 @@
 <?php
 /**
- * Fetch plugin for Craft CMS 3.x
+ * Guzzle plugin for Craft CMS 3.x
  *
  * Utilise the Guzzle HTTP client from within your Craft templates.
  *
@@ -8,32 +8,32 @@
  * @copyright Copyright (c) 2018 wyveo
  */
 
-namespace wyveo\fetch\twigextensions;
+namespace wyveo\guzzle\twigextensions;
 
-use wyveo\fetch\Fetch;
+use wyveo\guzzle\Guzzle;
 
 use Craft;
 
 /**
 * @author    Colin Wilson
-* @package   Fetch
+* @package   Guzzle
 * @since     1.0.0
 */
-class FetchTwigExtension extends \Twig_Extension
+class GuzzleTwigExtension extends \Twig_Extension
 {
   public function getName()
   {
-      return 'Fetch';
+      return 'Guzzle';
   }
 
   public function getFunctions()
   {
       return [
-          new \Twig_SimpleFunction('fetch', [$this, 'fetch']),
+          new \Twig_SimpleFunction('guzzle', [$this, 'guzzle']),
       ];
   }
 
-  public function fetch($client, $method, $destination, $request = [], $format = 'json')
+  public function guzzle($client, $method, $destination, $request = [], $format = 'json')
   {
       $client = new \GuzzleHttp\Client($client);
 

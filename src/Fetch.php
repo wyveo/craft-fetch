@@ -1,6 +1,6 @@
 <?php
 /**
- * Fetch plugin for Craft CMS 3.x
+ * Guzzle plugin for Craft CMS 3.x
  *
  * Utilise the Guzzle HTTP client from within your Craft templates.
  *
@@ -8,10 +8,10 @@
  * @copyright Copyright (c) 2018 wyveo
  */
 
-namespace wyveo\fetch;
+namespace wyveo\guzzle;
 
-use wyveo\fetch\variables\FetchVariable;
-use wyveo\fetch\twigextensions\FetchTwigExtension;
+use wyveo\guzzle\variables\GuzzleVariable;
+use wyveo\guzzle\twigextensions\GuzzleTwigExtension;
 
 use Craft;
 use craft\base\Plugin;
@@ -22,20 +22,20 @@ use craft\web\twig\variables\CraftVariable;
 use yii\base\Event;
 
 /**
- * Class Fetch
+ * Class Guzzle
  *
  * @author    Colin Wilson
- * @package   Fetch
+ * @package   Guzzle
  * @since     1.0.0
  *
  */
-class Fetch extends Plugin
+class Guzzle extends Plugin
 {
     // Static Properties
     // =========================================================================
 
     /**
-     * @var Fetch
+     * @var Guzzle
      */
     public static $plugin;
 
@@ -50,7 +50,7 @@ class Fetch extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        Craft::$app->view->registerTwigExtension(new FetchTwigExtension());
+        Craft::$app->view->registerTwigExtension(new GuzzleGuzzleTwigExtension());
 
         Event::on(
             CraftVariable::class,
@@ -58,7 +58,7 @@ class Fetch extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('fetch', FetchVariable::class);
+                $variable->set('guzzle', GuzzleVariable::class);
             }
         );
 
@@ -73,7 +73,7 @@ class Fetch extends Plugin
 
         Craft::info(
             Craft::t(
-                'fetch',
+                'guzzle',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),

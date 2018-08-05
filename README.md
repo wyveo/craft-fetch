@@ -1,6 +1,6 @@
-<img src="src/icon.svg" alt="icon" width="100" height="100">
+<img src="https://storage.googleapis.com/pubs-eu/img/icon.svg" alt="icon" width="100" height="100">
 
-# Fetch plugin for Craft CMS 3.x
+# Guzzle plugin for Craft CMS 3.x
 
 Utilise the Guzzle HTTP client from within your Craft templates.
 *(Forked from [Luke Youell](https://github.com/lukeyouell/craft-fetch))*
@@ -19,11 +19,11 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require wyveo/craft-fetch
+        composer require wyveo/craft-guzzle
 
-3. In the Control Panel, go to Settings → Plugins and click the "Install" button for Fetch.
+3. In the Control Panel, go to Settings → Plugins and click the "Install" button for Guzzle.
 
-## Using Fetch
+## Using Guzzle
 
 This plugin is built to work with the standard [Guzzle request options](http://docs.guzzlephp.org/en/stable/request-options.html)
 
@@ -54,7 +54,7 @@ This plugin is built to work with the standard [Guzzle request options](http://d
     }
 } %}
 
-{% set request = fetch(client, 'POST', 'api/0.1/test', options) %}
+{% set request = guzzle(client, 'POST', 'api/0.1/test', options) %}
 ```
 
 #### Response (successful)
@@ -80,7 +80,7 @@ This plugin is built to work with the standard [Guzzle request options](http://d
 }
 ```
 
-## Fetch Roadmap
+## Guzzle Roadmap
 
 More features soon:
 
