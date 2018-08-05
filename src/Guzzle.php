@@ -50,7 +50,7 @@ class Guzzle extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        Craft::$app->view->registerTwigExtension(new GuzzleGuzzleTwigExtension());
+        Craft::$app->view->registerTwigExtension(new GuzzleTwigExtension());
 
         Event::on(
             CraftVariable::class,
